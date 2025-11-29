@@ -1,0 +1,61 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,body{
+    width: 100%;
+    height: 100%;
+}
+
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+}
+
+@property --rotation{
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+
+@keyframes myanime {
+    from{
+        --rotation: 0deg;
+    }
+    to{
+        --rotation: 360deg;
+    }
+}
+
+.cart{
+    width: 400px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border: 0px solid transparent;
+    box-shadow: 0 0 0px yellow;
+    text-shadow: 0 0 0px yellow;
+    padding: 10px;
+    color: white;
+    background:
+        linear-gradient(black) padding-box,
+        conic-gradient(from var(--rotation), black, yellow, black) border-box;
+        transition: all 0.5 linear;
+    animation: myanime 5s linear infinite;
+}
+
+.cart:hover{
+        color: yellow;
+    box-shadow: 0 0 100px yellow;
+    text-shadow: 0 0 5px yellow;
+        border: 8px solid transparent;
+}
+
+.cart video{
+    width: 100%;
+}
