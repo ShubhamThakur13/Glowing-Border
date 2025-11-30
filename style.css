@@ -14,6 +14,10 @@ body{
     align-items: center;
     justify-content: center;
     background-color: black;
+    gap: 20px;
+    flex-wrap: nowrap;
+    overflow: auto;
+
 }
 
 @property --rotation{
@@ -47,6 +51,7 @@ body{
         conic-gradient(from var(--rotation), black, yellow, black) border-box;
         transition: all 0.5 linear;
     animation: myanime 5s linear infinite;
+    flex-shrink: 0;
 }
 
 .cart:hover{
@@ -56,6 +61,37 @@ body{
         border: 8px solid transparent;
 }
 
+.blue:hover{
+        color: royalblue;
+            background:
+        linear-gradient(black) padding-box,
+        conic-gradient(from var(--rotation), black, royalblue, black) border-box;
+    box-shadow: 0 0 100px royalblue;
+    text-shadow: 0 0 5px royalblue;
+        border: 8px solid transparent;
+}
+
+
+.red:hover{
+        color: crimson;
+            background:
+        linear-gradient(black) padding-box,
+        conic-gradient(from var(--rotation), black, crimson, black) border-box;
+    box-shadow: 0 0 100px crimson;
+    text-shadow: 0 0 5px crimson;
+        border: 8px solid transparent;
+}
+
 .cart video{
     width: 100%;
 }
+
+.cart:hover{
+    scale: 1.1 !important;
+            transition: all 0.5 linear;
+}
+
+body:has(.cart:hover) .cart{
+    scale: 0.8;
+}
+
